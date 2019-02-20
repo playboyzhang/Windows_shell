@@ -1,0 +1,8 @@
+
+start time: 2019/02/14 周四 10:58:34.82
+get the local md5
+MD5 的 C:\Users\silly\Desktop\test.txt 哈希:
+2f282b84e7e608d5852449ed940bfc51
+CertUtil: -hashfile 命令成功完成。
+get the remote md5
+finish the process from 172.25.25.11

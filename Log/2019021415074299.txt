@@ -1,0 +1,7 @@
+
+start time: 2019/02/14 ÷‹Àƒ 15:07:43.05
+get the local md5
+2f282b84e7e608d5852449ed940bfc51
+get the remote md5
+2f282b84e7e608d5852449ed940bfc51
+Now begin to delete from 172.25.25.11
