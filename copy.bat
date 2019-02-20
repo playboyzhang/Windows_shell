@@ -23,7 +23,7 @@ set sourcePath=C:\Users\silly\Desktop\local\*.txt
 for  %%i in (%sourcePath%) do (
 @certutil -hashfile %%i md5 >>.\log\local.txt
 )
-for /f "tokens=1* delims=:" %%a in ('findstr /n .* .\log\local.txt') do (
+for /f "tokens=1* delims=:" %%a in ('findstr "[a-z][0-9]*32" .\log\local.txt') do (
     if "%%a"=="2" set local=%%b
 )
 echo on
