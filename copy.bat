@@ -23,13 +23,13 @@ set sourcePath=C:\Users\silly\Desktop\local\*.txt
 for  %%i in (%sourcePath%) do (
 @certutil -hashfile %%i md5 >>.\log\local.txt
 )
-for /f "tokens=1* delims=:" %%a in ('findstr "[a-z][0-9]*32" .\log\local.txt') do (
-    if "%%a"=="2" set local=%%b
+for /f  %%a in ('findstr "[a-z][0-9]*32" .\log\local.txt') do (
+    echo %%a >>.\local.txt
 )
 echo on
 echo %local%
 echo get the remote md5
-@plink -pw %%i %%j@%%k "md5sum /tmp/test.txt | cut -d ' ' -f 1 " >.\log\remote.txt
+@plink -pw %%i %%j@%%k "md5sum /tmp/*.txt | cut -d ' ' -f 1 " >.\log\remote.txt
 set /P remote=<.\Log\remote.txt
 echo %remote%
 REM if "%local%"=="%remote%" (
