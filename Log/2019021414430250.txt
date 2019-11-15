@@ -1,0 +1,7 @@
+
+start time: 2019/02/14 周四 14:43:02.56
+get the local md5
+2f282b84e7e608d5852449ed940bfc51
+get the remote md5
+ECHO 处于打开状态。
+finish the process from 172.25.25.11

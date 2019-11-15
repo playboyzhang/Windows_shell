@@ -1,0 +1,5 @@
+
+start time: 2019/02/14 ÖÜËÄ 11:23:13.14
+get the local md5
+get the remote md5
+finish the process from 172.25.25.11

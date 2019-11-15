@@ -1,0 +1,5 @@
+
+start time: 2019/02/14 ÷‹Àƒ 10:28:11.27
+Now begin to download from 172.25.25.11
+Now begin to delete from 172.25.25.11
+finish the process from 172.25.25.11

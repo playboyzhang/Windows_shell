@@ -1,0 +1,7 @@
+
+start time: 2019/02/14 周四 10:57:49.95
+get the local md5
+CertUtil: -hashfile 失败: 0x80070002 (WIN32: 2 ERROR_FILE_NOT_FOUND)
+CertUtil: 系统找不到指定的文件。
+get the remote md5
+finish the process from 172.25.25.11
