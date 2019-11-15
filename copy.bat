@@ -14,13 +14,29 @@ echo checking in progress, please don't close...
 echo you can check process by viewing file: !log!.
 
 start "LogViewer" LogViewer.bat !log!
-rem 需手动安装pscp与plink软件包，%%i代表密码字段，%%j代表用户名字段，%%k代表ip字段
+
 for /f "delims=, tokens=1-3" %%i in (host.txt) do (
 echo Now begin to download from %%k
-@pscp  -r -pw  %%i %%j@%%k:/tmp/test.txt C:\Users\silly\Desktop\
-echo Now begin to delete from %%k
-@plink -pw %%i %%j@%%k "rm /tmp/test.txt"
-echo finish the process from %%k
+REM @pscp  -r -pw  %%i %%j@%%k:/tmp/*.txt C:\Users\silly\Desktop\
+echo get the local md5
+set sourcePath=C:\Users\silly\Desktop\local\*.txt
+for  %%i in (%sourcePath%) do (
+@certutil -hashfile %%i md5 >>.\log\local.txt
+)
+for /f  %%a in ('findstr "[a-z][0-9]*32" .\log\local.txt') do (
+    echo %%a >>.\local.txt
+)
+echo on
+echo %local%
+echo get the remote md5
+@plink -pw %%i %%j@%%k "md5sum /tmp/*.txt | cut -d ' ' -f 1 " >.\log\remote.txt
+set /P remote=<.\Log\remote.txt
+echo %remote%
+REM if "%local%"=="%remote%" (
+REM echo Now begin to delete from %%k
+REM @plink -pw %%i %%j@%%k "rm /tmp/test.txt"
+REM finish the process from %%k
+REM ) else (echo "文件有损坏请检查并重新下载")
 )>>!log!
 
 echo.
